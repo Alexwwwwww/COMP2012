@@ -1,27 +1,21 @@
 name: cppcheck-action-test
-on:
-  pull_request:
-    branches:
-      - main
+on: [pull_request]
 
 jobs:
   build:
     name: cppcheck-test
     runs-on: ubuntu-latest
     steps:
-
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-
+      - uses: actions/checkout@v2
+          
       - name: cppcheck
         uses: deep5050/cppcheck-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
-          output_file: ./CppCheckReport.txt
-
-      - name: publish report
-        uses: actions/upload-artifact@v2
-        with:
-          name: CppCheckReport
-          path: CppCheckReport.txt
+          
+        
+      - name: publish report    
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: 'main' # your branch name goes here
