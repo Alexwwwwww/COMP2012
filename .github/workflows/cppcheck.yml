@@ -1,8 +1,8 @@
 name: cppcheck-action-test
 on:
   pull_request:
-    branches:
-      - main
+    types:
+      - closed
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
       - uses: actions/checkout@v2
         with:
-            ref: ${{ steps.comment-branch.outputs.head_ref }}
+            ref: ${{ github.event.pull_request.head.sha }}
 
       - name: cppcheck
         uses: deep5050/cppcheck-action@main
