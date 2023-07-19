@@ -1,29 +1,31 @@
-name: CppCheck
-on:
-  pull_request:
-    branches: [main]
+name: Static analysis
+
+on: [pull_request]
 
 jobs:
-  cppcheck:
+  static_analysis:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Install cppcheck
-      run: sudo apt-get install cppcheck
-    - name: Run cppcheck
-      run: cppcheck --enable=all .
-    - name: Save cppcheck results
-      if: always()
-      run: cppcheck --enable=all . 2> CppCheck.txt
-    - name: Comment on pull request with CppCheck results
-      uses: actions/github@v4
+    - uses: actions/checkout@v2
+
+    - name: setup init_script
+      shell: bash
+      run: |
+        echo "#!/bin/bash
+        add-apt-repository ppa:oibaf/graphics-drivers
+        apt update
+        apt upgrade
+        apt install -y libvulkan1 mesa-vulkan-drivers vulkan-utils" > init_script.sh
+
+    - name: Run static analysis
+      uses: appliedinnovation/StaticAnalysis@master
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        repository: ${{ github.repository }}
-        issue-number: ${{ github.event.pull_request.number }}
-        body: |
-          CppCheck Results:
-          ```
-          $(cat CppCheck.txt)
-          ```
+        # Exclude any issues found in ${Project_root_dir}/lib
+        exclude_dir: lib
+
+        # Additional apt packages that need to be installed before running Cmake
+        apt_pckgs: software-properties-common libglu1-mesa-dev freeglut3-dev mesa-common-dev
+
+        # Additional script that will be run (sourced) AFTER 'apt_pckgs' and before running Cmake
+        init_script: init_script.sh
