@@ -1,0 +1,51 @@
+on:
+  pull_request:
+
+runs:
+  steps:
+    # Check the pull request out! (In pull_request jobs, the checkout action
+    # automatically downloads the "after-merge" state of the pull request if
+    # there are no conflicts.)
+    - name: "Check out repository"
+      uses: actions/checkout@v2
+
+    # Prepare a build
+    - name: "Prepare build"
+      run: |
+        mkdir -pv Build
+        cd Build
+        cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=OFF
+
+    # Run the analysis
+    - uses: whisperity/codechecker-analysis-action@v1
+      id: codechecker
+      with:
+        build-command: "cd ${{ github.workspace }}/Build; cmake --build ."
+
+        store: ${{ github.event_name == 'push' }}
+        store-url: 'http://example.com:8001/MyProject'
+        store-username: ${{ secrets.CODECHECKER_STORE_USER }}
+        store-password: ${{ secrets.CODECHECKER_STORE_PASSWORD }}
+        # Keep the names for 'store' and 'diff' in sync, or auto-generated!
+        # diff-run-name: "custom run name to store with"
+
+        diff: ${{ github.event_name == 'pull_request' }}
+        diff-url: 'http://example.com:8001/MyProject'
+        diff-username: ${{ secrets.CODECHECKER_DIFF_USER }}
+        diff-password: ${{ secrets.CODECHECKER_DIFF_PASSWORD }}
+        # diff-run-name: "custom run name to diff against"
+
+    # Upload the potential new findings results to the CI.
+    - uses: actions/upload-artifact@v2
+      if: ${{ steps.codechecker.outputs.warnings-in-diff == 'true' }}
+      with:
+        name: "New introduced results Bug Reports"
+        path: ${{ steps.codechecker.outputs.diff-html-dir }}
+
+    - name: "Fail the job if new findings are introduced"
+      if: ${{ steps.codechecker.outputs.warnings-in-diff == 'true' }}
+      shell: bash
+      run: |
+        echo "::error title=New static analysis warnings::Analysed commit would introduce new static analysis warnings and potential bugs to the project"
+        # Fail the build, after results were collected and uploaded.
+        exit 1
