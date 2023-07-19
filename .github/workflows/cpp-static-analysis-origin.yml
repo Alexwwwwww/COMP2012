@@ -1,6 +1,6 @@
 name: cppcheck-action
 on:
-  pull-request:
+  pull_request:
     branches:
       - main
 
