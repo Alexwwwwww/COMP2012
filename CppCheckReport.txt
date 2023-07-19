@@ -1,0 +1,497 @@
+check/course.cpp:9:11: warning: Class 'Course' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+    this->name = new char[strlen(name) + 1];
+          ^
+check/course_database.cpp:9:11: warning: Class 'Course_Database' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+    this->courses = new Course*[capacity];
+          ^
+check/course_database.h:13:5: style: Class 'Course_Database' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    Course_Database(const int capacity);
+    ^
+check/swap_list.cpp:9:11: warning: Class 'Swap' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
+    this->original_course_name = new char[strlen(original_course_name) + 1];
+          ^
+check/swap_list.cpp:9:11: warning: Class 'Swap' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+    this->original_course_name = new char[strlen(original_course_name) + 1];
+          ^
+check/wait_list.cpp:32:23: style: Condition 'tmp->next=nullptr' is always false [knownConditionTrueFalse]
+        if (tmp->next = nullptr)
+                      ^
+check/student.cpp:13:11: warning: Class 'Student' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+    this->name = new char[strlen(name) + 1];
+          ^
+check/student_database.cpp:8:11: warning: Class 'Student_Database' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+    this->students = new Student*[capacity];
+          ^
+check/student_database.h:13:5: style: Class 'Student_Database' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    Student_Database(const int capacity);
+    ^
+check/system.cpp:55:5: warning: Class 'System' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+    course_database = new Course_Database(max_num_course);
+    ^
+check/system.cpp:179:81: style:inconclusive: Function 'add_course' argument 3 names different: declaration 'max_capacity' definition 'course_capacity'. [funcArgNamesDifferent]
+void System::add_course(const char *const name, const int num_credit, const int course_capacity)
+                                                                                ^
+check/system.h:25:77: note: Function 'add_course' argument 3 names different: declaration 'max_capacity' definition 'course_capacity'.
+    void add_course(const char* const name, const int num_credit, const int max_capacity);
+                                                                            ^
+check/system.cpp:179:81: note: Function 'add_course' argument 3 names different: declaration 'max_capacity' definition 'course_capacity'.
+void System::add_course(const char *const name, const int num_credit, const int course_capacity)
+                                                                                ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::tennisballs' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::tenniscourts' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::persons' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::numTennisBall' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::numTennisCourt' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::numPerson' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::maxNumTennisBall' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::maxNumTennisCourt' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::maxNumPerson' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:16:16: warning: Member variable 'BookingSystem::SN' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::tennisballs' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::tenniscourts' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::persons' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::numTennisBall' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::numTennisCourt' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::numPerson' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::maxNumTennisBall' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::maxNumTennisCourt' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:27:16: warning: Member variable 'BookingSystem::maxNumPerson' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(int nTennisBall, int nTennisCourt, int capacity)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::tennisballs' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::tenniscourts' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::persons' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::numTennisBall' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::numTennisCourt' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::numPerson' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::maxNumTennisBall' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::maxNumTennisCourt' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.cpp:42:16: warning: Member variable 'BookingSystem::maxNumPerson' is not initialized in the constructor. [uninitMemberVar]
+BookingSystem::BookingSystem(const BookingSystem &other)
+               ^
+lab2/source/bookingsystem.h:36:10: style:inconclusive: Technically the member function 'BookingSystem::releaseTennisBall' can be const. [functionConst]
+    void releaseTennisBall();
+         ^
+lab2/source/bookingsystem.cpp:78:21: note: Technically the member function 'BookingSystem::releaseTennisBall' can be const.
+void BookingSystem::releaseTennisBall()
+                    ^
+lab2/source/bookingsystem.h:36:10: note: Technically the member function 'BookingSystem::releaseTennisBall' can be const.
+    void releaseTennisBall();
+         ^
+lab2/source/bookingsystem.h:38:10: style:inconclusive: Technically the member function 'BookingSystem::releaseTennisCourt' can be const. [functionConst]
+    void releaseTennisCourt();
+         ^
+lab2/source/bookingsystem.cpp:91:21: note: Technically the member function 'BookingSystem::releaseTennisCourt' can be const.
+void BookingSystem::releaseTennisCourt()
+                    ^
+lab2/source/bookingsystem.h:38:10: note: Technically the member function 'BookingSystem::releaseTennisCourt' can be const.
+    void releaseTennisCourt();
+         ^
+lab2/source/bookingsystem.h:41:10: style:inconclusive: Technically the member function 'BookingSystem::makeBooking' can be const. [functionConst]
+    void makeBooking();
+         ^
+lab2/source/bookingsystem.cpp:104:21: note: Technically the member function 'BookingSystem::makeBooking' can be const.
+void BookingSystem::makeBooking()
+                    ^
+lab2/source/bookingsystem.h:41:10: note: Technically the member function 'BookingSystem::makeBooking' can be const.
+    void makeBooking();
+         ^
+lab2/source/bookingsystem.h:27:5: style: Class 'BookingSystem' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    BookingSystem(int capacity);
+    ^
+lab2/source/person.cpp:11:9: warning: Member variable 'Person::tennisball' is not initialized in the constructor. [uninitMemberVar]
+Person::Person(TennisBall *tennisball, TennisCourt *tenniscourt)
+        ^
+lab2/source/person.cpp:11:9: warning: Member variable 'Person::tenniscourt' is not initialized in the constructor. [uninitMemberVar]
+Person::Person(TennisBall *tennisball, TennisCourt *tenniscourt)
+        ^
+lab2/source/person.cpp:24:9: warning: Member variable 'Person::tennisball' is not initialized in the constructor. [uninitMemberVar]
+Person::Person(const Person &other)
+        ^
+lab2/source/person.cpp:24:9: warning: Member variable 'Person::tenniscourt' is not initialized in the constructor. [uninitMemberVar]
+Person::Person(const Person &other)
+        ^
+lab3-source/GymCoach.h:17:14: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+        void print()const;
+             ^
+lab3-source/GymPerson.h:15:22: note: Virtual function in base class
+        virtual void print() const;
+                     ^
+lab3-source/GymCoach.h:17:14: note: Function in derived class
+        void print()const;
+             ^
+lab3-source/GymStudent.h:21:14: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+        void print() const;
+             ^
+lab3-source/GymPerson.h:15:22: note: Virtual function in base class
+        virtual void print() const;
+                     ^
+lab3-source/GymStudent.h:21:14: note: Function in derived class
+        void print() const;
+             ^
+lab3-source/classtest.cpp:20:5: warning: Member variable 'Uperson::age' is not initialized in the constructor. [uninitMemberVar]
+    Uperson(){cout<<"uperson conster\n";}
+    ^
+lab3-source/classtest.cpp:9:18: style: Unused private function: 'Uperson::sayhehe' [unusedPrivateFunction]
+    virtual void sayhehe() const
+                 ^
+lab3-source/classtest.cpp:21:9: style:inconclusive: Technically the member function 'Uperson::get_age' can be const. [functionConst]
+    int get_age()
+        ^
+lab3-source/classtest.cpp:38:10: style: The function 'sayhehe' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    void sayhehe() const
+         ^
+lab3-source/classtest.cpp:9:18: note: Virtual function in base class
+    virtual void sayhehe() const
+                 ^
+lab3-source/classtest.cpp:38:10: note: Function in derived class
+    void sayhehe() const
+         ^
+lab3-source/classtest.cpp:15:20: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+    Uperson(string name, int age){
+                   ^
+lab3-source/lab3/compilationtest.cpp:8:5: error: The code contains unhandled character(s) (character code=203). Neither unicode nor extended ascii is supported. [syntaxError]
+    ˜A() { cout << "A's destor\n"; }
+    ^
+lab3-source/lab3/virtual_constructor_ex.cpp:8:10: error: Class 'Base' which is inherited by class 'Derived' does not have a virtual destructor. [virtualDestructor]
+        ~Base() {cout<<"base's destructor\n";}
+         ^
+lab4-source/Product.h:14:5: style: Class 'Product' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    Product(double regular_price);
+    ^
+lab4-source/Book.h:27:20: style: The function 'get_retail_price' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual double get_retail_price() const;
+                   ^
+lab4-source/Product.h:18:20: note: Virtual function in base class
+    virtual double get_retail_price() const;
+                   ^
+lab4-source/Book.h:27:20: note: Function in derived class
+    virtual double get_retail_price() const;
+                   ^
+lab4-source/Book.h:28:18: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual void print() const;
+                 ^
+lab4-source/Product.h:20:18: note: Virtual function in base class
+    virtual void print() const;
+                 ^
+lab4-source/Book.h:28:18: note: Function in derived class
+    virtual void print() const;
+                 ^
+lab4-source/Toy.h:20:22: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+        virtual void print() const;
+                     ^
+lab4-source/Product.h:20:18: note: Virtual function in base class
+    virtual void print() const;
+                 ^
+lab4-source/Toy.h:20:22: note: Function in derived class
+        virtual void print() const;
+                     ^
+lab4-source/zinc_lab4/Product.h:14:5: style: Class 'Product' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    Product(double regular_price);
+    ^
+lab4-source/zinc_lab4/Book.h:27:20: style: The function 'get_retail_price' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual double get_retail_price() const;
+                   ^
+lab4-source/zinc_lab4/Product.h:18:20: note: Virtual function in base class
+    virtual double get_retail_price() const;
+                   ^
+lab4-source/zinc_lab4/Book.h:27:20: note: Function in derived class
+    virtual double get_retail_price() const;
+                   ^
+lab4-source/zinc_lab4/Book.h:28:18: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual void print() const;
+                 ^
+lab4-source/zinc_lab4/Product.h:20:18: note: Virtual function in base class
+    virtual void print() const;
+                 ^
+lab4-source/zinc_lab4/Book.h:28:18: note: Function in derived class
+    virtual void print() const;
+                 ^
+lab4-source/zinc_lab4/Toy.h:20:22: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+        virtual void print() const;
+                     ^
+lab4-source/zinc_lab4/Product.h:20:18: note: Virtual function in base class
+    virtual void print() const;
+                 ^
+lab4-source/zinc_lab4/Toy.h:20:22: note: Function in derived class
+        virtual void print() const;
+                     ^
+lab5/source/Book.h:26:20: style: The function 'get_retail_price' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual double get_retail_price() const;
+                   ^
+lab5/source/Product.h:21:23: note: Virtual function in base class
+       virtual double get_retail_price() const=0;
+                      ^
+lab5/source/Book.h:26:20: note: Function in derived class
+    virtual double get_retail_price() const;
+                   ^
+lab5/source/Book.h:27:18: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual void print() const;
+                 ^
+lab5/source/Product.h:22:21: note: Virtual function in base class
+       virtual void print() const=0;
+                    ^
+lab5/source/Book.h:27:18: note: Function in derived class
+    virtual void print() const;
+                 ^
+lab5/source/Toy.h:21:20: style: The function 'get_retail_price' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual double get_retail_price()const;
+                   ^
+lab5/source/Product.h:21:23: note: Virtual function in base class
+       virtual double get_retail_price() const=0;
+                      ^
+lab5/source/Toy.h:21:20: note: Function in derived class
+    virtual double get_retail_price()const;
+                   ^
+lab5/source/Toy.h:22:18: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual void print() const;
+                 ^
+lab5/source/Product.h:22:21: note: Virtual function in base class
+       virtual void print() const=0;
+                    ^
+lab5/source/Toy.h:22:18: note: Function in derived class
+    virtual void print() const;
+                 ^
+lab5/source/lab5_zinc/Toy.h:21:20: style: The function 'get_retail_price' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual double get_retail_price()const;
+                   ^
+lab5/source/lab5_zinc/Product.h:21:23: note: Virtual function in base class
+       virtual double get_retail_price() const=0;
+                      ^
+lab5/source/lab5_zinc/Toy.h:21:20: note: Function in derived class
+    virtual double get_retail_price()const;
+                   ^
+lab5/source/lab5_zinc/Toy.h:22:18: style: The function 'print' overrides a function in a base class but is not marked with a 'override' specifier. [missingOverride]
+    virtual void print() const;
+                 ^
+lab5/source/lab5_zinc/Product.h:22:21: note: Virtual function in base class
+       virtual void print() const=0;
+                    ^
+lab5/source/lab5_zinc/Toy.h:22:18: note: Function in derived class
+    virtual void print() const;
+                 ^
+lab5/source/ProductVector.h:63:13: style:inconclusive: Technically the member function 'ProductVector < int >::size' can be const. [functionConst]
+        int size() { return length; }
+            ^
+lab5/source/ProductVector.h:63:13: style:inconclusive: Technically the member function 'ProductVector < Book >::size' can be const. [functionConst]
+        int size() { return length; }
+            ^
+lab5/source/ProductVector.h:63:13: style:inconclusive: Technically the member function 'ProductVector < Toy >::size' can be const. [functionConst]
+        int size() { return length; }
+            ^
+lab5/source/ProductVector.h:16:36: warning: Class 'ProductVector < int >' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
+        ProductVector(int n = 1) : data(new T[n]), capacity(n), length(0) {}
+                                   ^
+lab5/source/ProductVector.h:16:36: warning: Class 'ProductVector < int >' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+        ProductVector(int n = 1) : data(new T[n]), capacity(n), length(0) {}
+                                   ^
+lab5/source/ProductVector.h:16:36: warning: Class 'ProductVector < Book >' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
+        ProductVector(int n = 1) : data(new T[n]), capacity(n), length(0) {}
+                                   ^
+lab5/source/ProductVector.h:16:36: warning: Class 'ProductVector < Book >' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+        ProductVector(int n = 1) : data(new T[n]), capacity(n), length(0) {}
+                                   ^
+lab5/source/ProductVector.h:16:36: warning: Class 'ProductVector < Toy >' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
+        ProductVector(int n = 1) : data(new T[n]), capacity(n), length(0) {}
+                                   ^
+lab5/source/ProductVector.h:16:36: warning: Class 'ProductVector < Toy >' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+        ProductVector(int n = 1) : data(new T[n]), capacity(n), length(0) {}
+                                   ^
+lab7/2018Q2.cpp:10:5: warning: Member variable 'uperson::age' is not initialized in the constructor. [uninitMemberVar]
+    uperson()
+    ^
+lab7/2018Q2.cpp:24:5: warning: Member variable 'student::CGA' is not initialized in the constructor. [uninitMemberVar]
+    student()
+    ^
+lab7/lab7_source/BinarySearchTree.h:16:5: style: Class 'BinarySearchTree' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    BinarySearchTree(int id);
+    ^
+lab7/lab7_source/Dbinding.cpp:9:11: performance:inconclusive: Technically the member function 'father::say' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+     void say()
+          ^
+lab7/lab7_source/Dbinding.cpp:18:10: style:inconclusive: Technically the member function 'father::getold' can be const. [functionConst]
+    void getold(father& another)
+         ^
+lab7/lab7_source/Dbinding.cpp:22:9: style:inconclusive: Technically the member function 'father::get_age' can be const. [functionConst]
+    int get_age()
+        ^
+lab7/lab7_source/Dbinding.cpp:32:10: performance:inconclusive: Technically the member function 'child::say' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+    void say()
+         ^
+lab7/lab7_source/Dbinding.cpp:47:10: performance:inconclusive: Technically the member function 'grandchild::say' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+    void say()
+         ^
+lab7/lab7_source/classEX.cpp:6:14: performance:inconclusive: Technically the member function 'A::sayhaha' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+        void sayhaha();
+             ^
+lab7/lab7_source/classEX.cpp:8:9: note: Technically the member function 'A::sayhaha' can be static (but you may consider moving to unnamed namespace).
+void A::sayhaha()
+        ^
+lab7/lab7_source/classEX.cpp:6:14: note: Technically the member function 'A::sayhaha' can be static (but you may consider moving to unnamed namespace).
+        void sayhaha();
+             ^
+Lab6_source/source/Book.h:9:1: error: The one definition rule is violated, different classes/structs have the same name 'Book' [ctuOneDefinitionRuleViolation]
+class Book : public Product {
+^
+lab4-source/Book.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'Book'
+class Book : public Product
+^
+Lab6_source/source/Book.h:9:1: note: The one definition rule is violated, different classes/structs have the same name 'Book'
+class Book : public Product {
+^
+Lab6_source/source/Book.h:9:1: error: The one definition rule is violated, different classes/structs have the same name 'Book' [ctuOneDefinitionRuleViolation]
+class Book : public Product {
+^
+lab4-source/zinc_lab4/Book.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'Book'
+class Book : public Product
+^
+Lab6_source/source/Book.h:9:1: note: The one definition rule is violated, different classes/structs have the same name 'Book'
+class Book : public Product {
+^
+Lab6_source/source/Book.h:9:1: error: The one definition rule is violated, different classes/structs have the same name 'Book' [ctuOneDefinitionRuleViolation]
+class Book : public Product {
+^
+lab5/source/Book.h:12:1: note: The one definition rule is violated, different classes/structs have the same name 'Book'
+class Book: public Product
+^
+Lab6_source/source/Book.h:9:1: note: The one definition rule is violated, different classes/structs have the same name 'Book'
+class Book : public Product {
+^
+lab4-source/Toy.h:10:1: error: The one definition rule is violated, different classes/structs have the same name 'Toy' [ctuOneDefinitionRuleViolation]
+class Toy:public Product
+^
+lab5/source/Toy.h:11:1: note: The one definition rule is violated, different classes/structs have the same name 'Toy'
+class Toy: public Product
+^
+lab4-source/Toy.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'Toy'
+class Toy:public Product
+^
+lab4-source/Toy.h:10:1: error: The one definition rule is violated, different classes/structs have the same name 'Toy' [ctuOneDefinitionRuleViolation]
+class Toy:public Product
+^
+lab5/source/lab5_zinc/Toy.h:11:1: note: The one definition rule is violated, different classes/structs have the same name 'Toy'
+class Toy: public Product
+^
+lab4-source/Toy.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'Toy'
+class Toy:public Product
+^
+lab3-source/constructorgg.cpp:4:1: error: The one definition rule is violated, different classes/structs have the same name 'A' [ctuOneDefinitionRuleViolation]
+class A
+^
+lab7/lab7_source/classEX.cpp:3:1: note: The one definition rule is violated, different classes/structs have the same name 'A'
+class A
+^
+lab3-source/constructorgg.cpp:4:1: note: The one definition rule is violated, different classes/structs have the same name 'A'
+class A
+^
+check/system.cpp:190:0: style: The function 'get_course_database' is never used. [unusedFunction]
+
+^
+check/course_database.cpp:59:0: style: The function 'get_courses' is never used. [unusedFunction]
+
+^
+check/system.cpp:195:0: style: The function 'get_student_database' is never used. [unusedFunction]
+
+^
+check/student_database.cpp:59:0: style: The function 'get_students' is never used. [unusedFunction]
+
+^
+lab7/lab7_source/Dbinding.cpp:9:0: style: The function 'say' is never used. [unusedFunction]
+
+^
+lab7/lab7_source/classEX.cpp:8:0: style: The function 'sayhaha' is never used. [unusedFunction]
+
+^
+lab3-source/classtest.cpp:9:0: style: The function 'sayhehe' is never used. [unusedFunction]
+
+^
+check/system.cpp:28:0: style: The function 'search_course_index' is never used. [unusedFunction]
+
+^
+check/system.cpp:41:0: style: The function 'search_student_id' is never used. [unusedFunction]
+
+^
+check/course.cpp:90:0: style: The function 'set_capacity' is never used. [unusedFunction]
+
+^
+check/system.cpp:200:0: style: The function 'set_course_database' is never used. [unusedFunction]
+
+^
+check/course_database.cpp:71:0: style: The function 'set_courses' is never used. [unusedFunction]
+
+^
+check/student.cpp:123:0: style: The function 'set_gpa' is never used. [unusedFunction]
+
+^
+check/course.cpp:82:0: style: The function 'set_name' is never used. [unusedFunction]
+
+^
+check/course.cpp:86:0: style: The function 'set_num_credit' is never used. [unusedFunction]
+
+^
+check/system.cpp:205:0: style: The function 'set_student_database' is never used. [unusedFunction]
+
+^
+check/student.cpp:119:0: style: The function 'set_student_id' is never used. [unusedFunction]
+
+^
+check/student_database.cpp:71:0: style: The function 'set_students' is never used. [unusedFunction]
+
+^
+check/student.cpp:147:0: style: The function 'set_swap_list' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
