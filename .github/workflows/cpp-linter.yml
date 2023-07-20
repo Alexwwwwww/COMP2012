@@ -3,8 +3,10 @@ name: c-linter
 on: [pull_request]
 jobs:
   c-linter:
+    permissions: write-all
     name: c-linter
     runs-on: ubuntu-latest
+
     steps:
       - name: c-linter
         uses: ArtificialAmateur/cpp-linter-action@master
