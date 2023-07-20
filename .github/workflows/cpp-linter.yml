@@ -14,6 +14,7 @@ jobs:
       - name: c-linter
         id: lint
         uses: ArtificialAmateur/cpp-linter-action@master
+          
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
         with:
@@ -22,6 +23,5 @@ jobs:
             ```
             ${{ steps.lint.outputs.stdout }}
             ```      
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
