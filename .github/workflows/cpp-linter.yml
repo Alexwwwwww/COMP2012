@@ -5,7 +5,6 @@ jobs:
   c-linter:
     permissions:
       contents: 'read'
-      id-token: 'write'
       issues: 'write'
     name: c-linter
     runs-on: ubuntu-latest
