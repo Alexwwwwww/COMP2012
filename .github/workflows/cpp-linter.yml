@@ -4,8 +4,10 @@ on: [pull_request]
 jobs:
   c-linter:
     permissions:
-      contents: 'read'
-      issues: 'write'
+      contents: write
+      pull-requests: write 
+      issues: read
+      packages: none
     name: c-linter
     runs-on: ubuntu-latest
 
@@ -20,7 +22,7 @@ jobs:
           message: |
             static analysis for the cpp code
             ```
-            ${{ steps.lint.outputs.stdout }}
+            hello
             ```      
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
