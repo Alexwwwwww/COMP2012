@@ -1,3 +1,4 @@
+haha
 add a new line
 add yet another line
 testing lint cpp action

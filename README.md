@@ -1,4 +1,4 @@
-## COMP2012
+# COMP2012
 These are the lab works done in course COMP2012 object oriented programming in C++, including specific topic like inheritance, generic programming, STL etc.
 Mainly include:
 1. Order of constructor and destructor
@@ -15,4 +15,3 @@ Some small yet important feature of C++ is also included but in a smaller fracti
 3. STL library
 4. static keyword (self learn, not examined)
 5. namespace (self learn, not examined)
-
