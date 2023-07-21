@@ -1,4 +1,4 @@
-## COMP2012
+# COMP2012
 
 These are the lab works done in course COMP2012 object oriented programming in C++, including specific topic like inheritance, generic programming, STL etc.
 Mainly include:
@@ -19,4 +19,3 @@ Some small yet important feature of C++ is also included but in a smaller fracti
 1. STL library
 1. static keyword (self learn, not examined)
 1. namespace (self learn, not examined)
-
