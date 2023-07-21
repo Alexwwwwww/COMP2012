@@ -15,7 +15,8 @@ jobs:
       - name: c-linter
         id: lint
         uses: ArtificialAmateur/cpp-linter-action@master
-          
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
         with:
@@ -24,5 +25,5 @@ jobs:
             ```
             hello
             ```      
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
