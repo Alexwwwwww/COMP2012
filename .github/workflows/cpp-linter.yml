@@ -23,7 +23,7 @@ jobs:
           message: |
             static analysis for the cpp code
             ```
-            hello
+             ${{ steps.lint.outputs.stdout }}
             ```      
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
