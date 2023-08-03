@@ -39,7 +39,7 @@ jobs:
           script: |
             const fs = require('fs');
             const { Octokit } = require('@octokit/rest');
-            const fetch = require('node-fetch');
+
             // Read the Cppcheck report
             const report = fs.readFileSync('cppcheck_report.xml', 'utf8');
 
