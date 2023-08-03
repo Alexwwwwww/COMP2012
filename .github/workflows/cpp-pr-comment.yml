@@ -24,20 +24,22 @@ jobs:
           node-version: '16'
 
       - name: Install Octokit
-        run: npm install @octokit/rest
+        run: |
+            npm install @octokit/rest
+            npm install node-fetch
 
       - name: Run Cppcheck
         run: |
           cppcheck --enable=all --inconclusive --xml --xml-version=2 . 2> cppcheck_report.xml
 
       - name: Comment on Pull Request
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
             const { Octokit } = require('@octokit/rest');
-
+            const fetch = require('node-fetch');
             // Read the Cppcheck report
             const report = fs.readFileSync('cppcheck_report.xml', 'utf8');
 
