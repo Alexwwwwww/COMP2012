@@ -39,14 +39,17 @@ jobs:
           script: |
             const fs = require('fs');
             const { Octokit } = require('@octokit/rest');
-
+            
             // Read the Cppcheck report
             const report = fs.readFileSync('cppcheck_report.xml', 'utf8');
 
             // Create an Octokit instance
-            const octokit = new Octokit({
-              auth: process.env.GITHUB_TOKEN
-            });
+            const octokit = new Octokit(
+              {
+                request: {fetch: fetch},
+                auth: process.env.GITHUB_TOKEN
+              },
+            );
 
             // Create a check run
             const check = await octokit.checks.create({
